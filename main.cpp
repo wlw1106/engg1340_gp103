@@ -1,31 +1,67 @@
 #include <iostream>
+#include <cstdlib>
+#include <time.h>
 #include <string>
+#include <fstream>
 #include "print.h"
+#include "check.h"
 using namespace std;
 
 int main() {
   // Initialize sudoku 2-D container (9x9 boxes)
   int sudoku[9][9] = {0};
-  // Input the preset value by file randomly
-
+  // Initialize user input variables
   string coordinate;
   int value = 0;
   int x,y = 0;
+  // Input the preset value by file randomly
+  srand(time(0));
+  // int k = rand()%5+1; // Random 5 files
+  int k = 1;
+  string presetv;
+  ifstream fin;
+  char filename[6] = {char(k+48),'.','t','x','t'};
+  fin.open(filename);
+  if ( fin.fail() ){
+    cout << "Error in opening file: " << char(k+48) << ".txt" << endl;
+  }
+  while (fin >> coordinate >> value){
+    x = coordinate[0]-65;
+    y = coordinate[1]-48;
+    sudoku[x][y] = value;
+    // Record our preset coordinate to avoid being edited later
+    presetv += coordinate + " ";
+  }
+  fin.close();
   while (coordinate != "q") {
     // print out the sudoku with coordinate system
     prints(sudoku);
     // input the coordinate and by its value (e.g. A5 8)
     cin >> coordinate >> value;
-    x = coordinate[0]-65;
-    y = coordinate[1]-48;
-    if (x < 9 && y < 9 && value <= 9){
-      sudoku[x][y] = value;
+    // Check if the input is our preset coordinate
+    if (presetv.find(coordinate) != string::npos){
+      cout << "You cannot edit the preset value!" << endl;
     } else {
-      if (coordinate == "q"){
-        cout << "BYE!!" << endl;
-        break;
+      x = coordinate[0]-65;
+      y = coordinate[1]-48;
+      if (x < 9 && y < 9 && x >= 0 && y >= 0 && value >=0 && value <= 9){
+        // Check if user is win
+        if (checkwin(sudoku) == false){
+          sudoku[x][y] = value;
+        } else {
+          cout << "You are WIN~" << endl;
+          cout << "BYE!!" << endl;
+          break;
+        }
+      } else {
+        if (coordinate == "q"){
+          cout << "BYE!!" << endl;
+          break;
+        }
+        cout << "Invalid Inputs" << endl;
+        x, y, value = 0;
+        coordinate = "";
       }
-      cout << "Invalid Inputs" << endl;
     }
   }
 }
