@@ -27,7 +27,7 @@ int main() {
   }
   while (fin >> coordinate >> value){
     x = coordinate[0]-65;
-    y = coordinate[1]-48;
+    y = coordinate[1]-49;
     sudoku[x][y] = value;
     // Record our preset coordinate to avoid being edited later
     presetv += coordinate + " ";
@@ -43,8 +43,8 @@ int main() {
       cout << "You cannot edit the preset value!" << endl;
     } else {
       x = coordinate[0]-65;
-      y = coordinate[1]-48;
-      if (x < 9 && y < 9 && x >= 0 && y >= 0 && value >=0 && value <= 9){
+      y = coordinate[1]-49;
+      if (x <= 9 && y <= 9 && x >= 0 && y >= 0 && value >=0 && value <= 9){
         // Check if user is win
         if (checkwin(sudoku) == false){
           sudoku[x][y] = value;
