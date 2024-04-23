@@ -3,7 +3,7 @@
 using namespace std;
 
 void prints(int s[9][9]){
-    cout << "    0 1 2   3 4 5   6 7 8" << endl;
+    cout << "    1 2 3   4 5 6   7 8 9" << endl;
     cout << "  + + + + + + + + + + + + +" << endl;
     for (int i = 0; i < 9; i++){
         cout << char('A'+i) << " + ";
@@ -15,10 +15,9 @@ void prints(int s[9][9]){
         }
         cout << char('A'+i);
         cout << endl;
-        if ((i+1)%3 == 0 && i > 0 && i != 8){
+        if ((i+1)%3 == 0 && i > 0){
             cout << "  + + + + + + + + + + + + +" << endl;
         }
     }
-    cout << "  + + + + + + + + + + + + +" << endl;
-    cout << "    0 1 2   3 4 5   6 7 8" << endl;
+    cout << "    1 2 3   4 5 6   7 8 9" << endl;
 }
