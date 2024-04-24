@@ -3,6 +3,7 @@
 #include <time.h>
 #include <string>
 #include <fstream>
+#include <sstream>
 #include "print.h"
 #include "check.h"
 using namespace std;
@@ -16,9 +17,8 @@ int main() {
   int x,y = 0;
   // Input the preset value by file randomly
   srand(time(0));
-  // int k = rand()%5+1; // Random 5 files
-  int k = 1;
-  string presetv;
+  int k = rand()%2+1; // Random 5 files
+  string presetv, input;
   ifstream fin;
   char filename[6] = {char(k+48),'.','t','x','t'};
   fin.open(filename);
@@ -37,7 +37,14 @@ int main() {
     // print out the sudoku with coordinate system
     prints(sudoku);
     // input the coordinate and by its value (e.g. A5 8)
-    cin >> coordinate >> value;
+    getline(cin, input);
+    // initialize string stream
+    stringstream ss(input);
+    if (input.length() > 1){
+      ss >> coordinate >> value;
+    } else {
+      ss >> coordinate;
+    }
     // Check if the input is our preset coordinate
     if (presetv.find(coordinate) != string::npos){
       cout << "You cannot edit the preset value!" << endl;
@@ -49,6 +56,7 @@ int main() {
         sudoku[x][y] = value;
         // Check if user is win
         if (checkwin(sudoku)){
+          prints(sudoku);
           cout << "You are WIN~" << endl;
           cout << "BYE!!" << endl;
           break;
