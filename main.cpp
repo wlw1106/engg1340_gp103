@@ -45,10 +45,10 @@ int main() {
       x = coordinate[0]-65;
       y = coordinate[1]-49;
       if (x < 9 && y < 9 && x >= 0 && y >= 0 && value >=0 && value <= 9){
+        // Update the sudoku array
+        sudoku[x][y] = value;
         // Check if user is win
-        if (checkwin(sudoku) == false){
-          sudoku[x][y] = value;
-        } else {
+        if (checkwin(sudoku)){
           cout << "You are WIN~" << endl;
           cout << "BYE!!" << endl;
           break;
