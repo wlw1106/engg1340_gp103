@@ -3,7 +3,7 @@
 <pre>make main<br>./main</pre>
 </p>
 <p>To quit the game, please type:
-<pre>q q</pre>
+<pre>q</pre>
 </p>
 <p>To clean the repo, please type:
 <pre>make clean</pre>
