@@ -36,7 +36,7 @@ int main() {
     // print out the sudoku with coordinate system
     prints(sudoku);
     // Ask player
-    cout >> "Please enter the coordinate and its value: ";
+    count << "Please enter the coordinate and its value: ";
     // input the coordinate and by its value (e.g. A5 8)
     cin >> coordinate >> value;
     // Check if the input is our preset coordinate
