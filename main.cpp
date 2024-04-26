@@ -3,11 +3,9 @@
 #include <time.h>
 #include <string>
 #include <fstream>
-#include <sstream>
 #include "print.h"
 #include "check.h"
 using namespace std;
-
 int main() {
   // Initialize sudoku 2-D container (9x9 boxes)
   int sudoku[9][9] = {0};
@@ -17,8 +15,9 @@ int main() {
   int x,y = 0;
   // Input the preset value by file randomly
   srand(time(0));
-  int k = rand()%2+1; // Random 5 files
-  string presetv, input;
+  // int k = rand()%5+1; // Random 5 files
+  int k = 1;
+  string presetv;
   ifstream fin;
   char filename[6] = {char(k+48),'.','t','x','t'};
   fin.open(filename);
@@ -36,25 +35,24 @@ int main() {
   while (coordinate != "q") {
     // print out the sudoku with coordinate system
     prints(sudoku);
-    //Ask player for the inputs
-    cout << "Please enter a coordinate: ";
-    cin >> coordinate;
-
+    // Ask player
+    cout >> "Please enter the coordinate and its value: ";
+    // input the coordinate and by its value (e.g. A5 8)
+    cin >> coordinate >> value;
     // Check if the input is our preset coordinate
     if (presetv.find(coordinate) != string::npos){
       cout << "You cannot edit the preset value!" << endl;
-      cout << "Please Try Again!" << endl;
     } else {
-      cout << "Please enter a coordinate: ";
-      cin >> value;
       x = coordinate[0]-65;
       y = coordinate[1]-49;
       if (x < 9 && y < 9 && x >= 0 && y >= 0 && value >=0 && value <= 9){
         // Update the sudoku array
         sudoku[x][y] = value;
         // Check if user is win
+        if (checkwin(sudoku) == false){
+          sudoku[x][y] = value;
+        } else {
         if (checkwin(sudoku)){
-          prints(sudoku);
           cout << "You are WIN~" << endl;
           cout << "BYE!!" << endl;
           break;
