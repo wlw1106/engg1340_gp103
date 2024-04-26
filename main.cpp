@@ -36,19 +36,17 @@ int main() {
   while (coordinate != "q") {
     // print out the sudoku with coordinate system
     prints(sudoku);
-    // input the coordinate and by its value (e.g. A5 8)
-    getline(cin, input);
-    // initialize string stream
-    stringstream ss(input);
-    if (input.length() > 1){
-      ss >> coordinate >> value;
-    } else {
-      ss >> coordinate;
-    }
+    //Ask player for the inputs
+    cout << "Please enter a coordinate: ";
+    cin >> coordinate;
+
     // Check if the input is our preset coordinate
     if (presetv.find(coordinate) != string::npos){
       cout << "You cannot edit the preset value!" << endl;
+      cout << "Please Try Again!" << endl;
     } else {
+      cout << "Please enter a coordinate: ";
+      cin >> value;
       x = coordinate[0]-65;
       y = coordinate[1]-49;
       if (x < 9 && y < 9 && x >= 0 && y >= 0 && value >=0 && value <= 9){
