@@ -12,6 +12,9 @@
 > [!Caution]
 > Please clean all function files before committing.
 
+> [!Warning]
+> Make sure to pull the latest file to edit.
+
 <h3>Code Requirement</h3>
 <p>To fulfil the project requirement, our code has the following features:
 <ul><li>Generation of random game sets or events<br>
