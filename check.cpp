@@ -12,7 +12,7 @@ bool checkwin(int s[9][9]){
         for(int j = 0; j < 9; j++) {
             temp[j] = s[i][j];
         }
-        cout << endl;
+        // cout << endl;
         for (int j = 0; j < 9; j++) {
             for (int k = j + 1; k < 9; k++) {
 

@@ -24,7 +24,10 @@
   <li>Data structures for storing game status (e.g., arrays, STL containers)<br>
     We have used a 2-D int array to store our Sudoku puzzle<br>
     <pre>int sudoku[9][9] = {0}</pre></li>
-  <li><b>[!! We are missing this]</b> Dynamic memory management (e.g., dynamic arrays, linked lists, STL containers)</li>
+  <li>Dynamic memory management (e.g., dynamic arrays, linked lists, STL containers)
+  <br>
+    We have used dynamic STL containers for storing our preset coordinate<br>
+    <pre>vector<string> presetv;<br>if (count(presetv.begin(), presetv.end(), coordinate) > 0){ ... }</pre></li>
   <li>File input/output (e.g., for loading/saving game status)<br>
     We have used file 1-10.txt for inputting our game puzzle<br>
     <pre>ifstream fin;<br>char filename[6] = {char(k+48),'.','t','x','t'};<br>while (fin >> coordinate >> value){ ... }</pre></li>

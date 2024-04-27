@@ -4,6 +4,8 @@
 #include <string>
 #include <fstream>
 #include <sstream>
+#include <vector>
+#include <algorithm>
 #include "print.h"
 #include "check.h"
 using namespace std;
@@ -18,7 +20,9 @@ int main() {
   srand(time(0));
   int k = rand()%6+1; // Random 6 files
   // int k = 1;
-  string presetv, input;
+  // Create an empty vector of STL containers
+  vector<string> presetv;
+  string input;
   ifstream fin;
   char filename[6] = {char(k+48),'.','t','x','t'};
   fin.open(filename);
@@ -30,7 +34,7 @@ int main() {
     y = coordinate[1]-49;
     sudoku[x][y] = value;
     // Record our preset coordinate to avoid being edited later
-    presetv += coordinate + " ";
+    presetv.push_back(coordinate);
   }
   fin.close();
   while (coordinate != "q") {
@@ -48,7 +52,7 @@ int main() {
       ss >> coordinate;
     }
     // Check if the input is our preset coordinate
-    if (presetv.find(coordinate) != string::npos){
+    if (count(presetv.begin(), presetv.end(), coordinate) > 0){
       cout << "You cannot edit the preset value!" << endl;
       cout << "Please Try Again!" << endl;
     } else {
