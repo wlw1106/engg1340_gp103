@@ -79,12 +79,12 @@ I + 0 0 0 + 0 6 0 + 0 3 7 + I
 Please enter the coordinate and its value: C8 5
 ...</pre>
 </p>
-<p>To quit the game during any time after the game started, please type:
+<p>To quit the game during any time after the game started, please type <b>q</b>:
 <pre>...
 Please enter the coordinate and its value: <b>q</b>
 BYE!!</pre>
 </p>
-<p>You will recieve the following command if you win the game:
+<p>You will receive the following command if you win the game:
 <pre>You are WIN~
 BYE!!</pre>
 </p>
