@@ -44,7 +44,7 @@
 <p>To start the game, please make use of Makefile:
 <pre>make main<br>./main</pre>
 </p>
-<p>Enter a coordinate and its value (Note: you cannot change our preset value!)<br>For example: Editing <font style="color: red">A3</font> be 6; Press ENTER and you will see the result:
+<p>Enter a coordinate and its value (Note: you cannot change our preset value!)<br>For example: Editing <b style="color: red">A3</b> be 6; Press ENTER and you will see the result:
 <pre>    1 2 3   4 5 6   7 8 9
   + + + + + + + + + + + + +
 A + 0 0 <b style="color: red">0</b> + 0 0 0 + 9 2 0 + A
@@ -80,7 +80,9 @@ Please enter the coordinate and its value: C8 5
 ...</pre>
 </p>
 <p>To quit the game during any time after the game started, please type:
-<pre>q</pre>
+<pre>...
+Please enter the coordinate and its value: <b>q</b>
+BYE!!</pre>
 </p>
 <p>You will recieve the following command if you win the game:
 <pre>You are WIN~
