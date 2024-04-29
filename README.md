@@ -44,8 +44,47 @@
 <p>To start the game, please make use of Makefile:
 <pre>make main<br>./main</pre>
 </p>
+<p>Enter a coordinate and its value (Note: you cannot change our preset value!)<br>For example: Editing <font style="color: red">A3</font> be 6; Press ENTER and you will see the result:
+<pre>    1 2 3   4 5 6   7 8 9
+  + + + + + + + + + + + + +
+A + 0 0 <b style="color: red">0</b> + 0 0 0 + 9 2 0 + A
+B + 5 4 0 + 0 3 0 + 1 0 0 + B
+C + 0 0 8 + 0 5 7 + 0 0 4 + C
+  + + + + + + + + + + + + +
+D + 0 5 0 + 0 8 0 + 0 0 3 + D
+E + 9 0 3 + 0 4 6 + 8 0 0 + E
+F + 1 0 0 + 3 0 0 + 0 4 0 + F
+  + + + + + + + + + + + + +
+G + 0 7 0 + 4 0 0 + 0 0 0 + G
+H + 3 6 1 + 0 7 9 + 0 8 0 + H
+I + 0 0 0 + 0 6 0 + 0 3 7 + I
+  + + + + + + + + + + + + +
+    1 2 3   4 5 6   7 8 9
+Please enter the coordinate and its value: <b style="color: red">A3 6</b>
+    1 2 3   4 5 6   7 8 9
+  + + + + + + + + + + + + +
+A + 0 0 <b style="color: red">6</b> + 0 0 0 + 9 2 0 + A
+B + 5 4 0 + 0 3 0 + 1 0 0 + B
+C + 0 0 8 + 0 5 7 + 0 0 4 + C
+  + + + + + + + + + + + + +
+D + 0 5 0 + 0 8 0 + 0 0 3 + D
+E + 9 0 3 + 0 4 6 + 8 0 0 + E
+F + 1 0 0 + 3 0 0 + 0 4 0 + F
+  + + + + + + + + + + + + +
+G + 0 7 0 + 4 0 0 + 0 0 0 + G
+H + 3 6 1 + 0 7 9 + 0 8 0 + H
+I + 0 0 0 + 0 6 0 + 0 3 7 + I
+  + + + + + + + + + + + + +
+    1 2 3   4 5 6   7 8 9
+Please enter the coordinate and its value: C8 5
+...</pre>
+</p>
 <p>To quit the game during any time after the game started, please type:
 <pre>q</pre>
+</p>
+<p>You will recieve the following command if you win the game:
+<pre>You are WIN~
+BYE!!</pre>
 </p>
 <p>You are recommended to clean the repo after you enjoy our game, use clean function in our Makefile:
 <pre>make clean</pre>
