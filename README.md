@@ -93,8 +93,8 @@ BYE!!</pre>
 </p>
 
 <h3>Contribution</h3>
-<ul><li>Ching Chun Wing ( )
-<p>Responsible for <code>checkwin()</code> function in check.cpp and creating files for puzzle input.</p></li>
+<ul><li>Ching Chun Wing (3035928823)
+<p>Responsible for <code>checkwin()</code> function in check.cpp, the trailer, and creating files for puzzle input.</p></li>
 <li>Kim Minjae ( )
 <p><i>Please declare your own contribution here...</i></p></li>
 <li>Nie Hong ( )
