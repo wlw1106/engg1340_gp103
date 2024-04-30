@@ -6,7 +6,7 @@
 > Make sure to pull the latest file to edit.
 
 <h3>Team Members (Group 103)</h3>
-<ul><li>Ching Chun Wing ( )</li>
+<ul><li>Ching Chun Wing (3035928823)</li>
 <li>Kim Minjae ( )</li>
 <li>Nie Hong ( )</li>
 <li>Wong Lik Wai (3036222721)</li>
